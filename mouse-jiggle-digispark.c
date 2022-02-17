@@ -1,5 +1,3 @@
-#include <DigiMouse.h>
-
 /*
  *  NAME: Digispark (ATTiny85) Mouse Jiggler
  *  DESC: Keep your computer awake and unlocked by jiggling the mouse
@@ -7,6 +5,8 @@
  *  DATE: 2022-02-05 
  *  AUTHOR: cloudranger.ch
  */
+
+#include <DigiMouse.h>
 
 // Max delay that can be used in delay() is 16383 - 16 seconds
 
@@ -25,10 +25,10 @@ void setup()
 
 void loop()
 {
-  delay(sleep);
+  DigiMouse.delay(sleep);
   digitalWrite(led, HIGH);   // turn the LED on
   DigiMouse.moveX(1);
   DigiMouse.moveX(-1);
-  delay(led_lit);
+  DigiMouse.delay(led_lit);
   digitalWrite(led, LOW);   // turn the LED off
 }
